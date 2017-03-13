@@ -37,7 +37,7 @@ webpackConfig.entry = {
 // Bundle Output
 // ------------------------------------
 webpackConfig.output = {
-  filename: `[name].[${config.compiler_hash_type}].js`,
+  filename: `js/[name].[${config.compiler_hash_type}].js`,
   chunkFilename: '[chunkhash].js',
   path: paths.dist(),
   publicPath: config.compiler_public_path
@@ -55,7 +55,7 @@ webpackConfig.plugins = [
     filename: 'index.html',
     inject: 'body',
     minify: {
-      collapseWhitespace: true
+      collapseWhitespace: false
     }
   })
 ]
@@ -162,7 +162,13 @@ webpackConfig.module.loaders.push(
   { test: /\.ttf(\?.*)?$/,   loader: 'url?prefix=fonts/&name=[hash:base64:20].[ext]&limit=10000&mimetype=application/octet-stream' },
   { test: /\.eot(\?.*)?$/,   loader: 'file?prefix=fonts/&name=[hash:base64:20].[ext]' },
   { test: /\.svg(\?.*)?$/,   loader: 'url?prefix=fonts/&name=[hash:base64:20].[ext]&limit=10000&mimetype=image/svg+xml' },
-  { test: /\.(png|jpg|gif)$/,    loader: 'url?limit=8192' }
+  { test: /\.(png|jpg|gif)$/,   
+    loader: 'url-loader',
+    query: {
+      limit: 8192,
+      name: 'img/[hash].[ext]'
+    } 
+  }
 )
 /* eslint-enable */
 
@@ -184,7 +190,7 @@ if (!__DEV__) {
   })
 
   webpackConfig.plugins.push(
-    new ExtractTextPlugin('[contenthash].css', {
+    new ExtractTextPlugin('css/[contenthash].css', {
       allChunks: true
     })
   )
