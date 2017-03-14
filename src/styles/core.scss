@@ -1,44 +1,110 @@
 @import 'base';
 @import '~normalize.css/normalize';
-
+@import './ionicons.css';
 // Some best-practice CSS that's useful for most apps
 // Just remove them if they're not what you want
-html {
-  box-sizing: border-box;
+@charset "UTF-8";
+/*common start*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td { padding:0;margin:0; }
+fieldset, img { border:none;}
+table { border-collapse:collapse;border-spacing:0;}
+ol,ul,li{ list-style: none;list-style-type:none;}
+address,caption,cite,code,dfn,th,var { font-weight: normal; font-style: normal; }     
+caption,th { text-align: left; }   
+h1,h2,h3,h4,h5,h6 { font-weight: normal; font-size: 100%;}   
+q:before,q:after {content:''; }   
+abbr,acronym { border: 0}
+a{ color:#5f5f5f; text-decoration:none;}
+a:hover{ color:#fe0000; text-decoration:none}
+body{  font-family:'Microsoft Yahei',"STHeiti Light [STXihei]",Arial, Helvetica, sans-serif; *font-family:Arial, Helvetica, sans-serif;}
+html, body {
+    position: relative;
 }
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+*{box-sizing: border-box;}
+section, article, aside, header, footer, nav, dialog, figure{display:block}
+*{    
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
+.clearfix:after{content:"."; display:block; height:0; clear:both; visibility:hidden;}
+.clearfix{display:inline-block;}
+* html .clearfix{height:1%;}
+.clearfix{display:block;}
+.clear{clear:both; height:0; font:0/0 Arial; visibility:hidden;}
+button, input, label, select, textarea { font-weight: auto; font-size: auto; line-height: auto;}
+li{ line-height: normal;}
+/*common end*/
 
+/*body start*/
+$main-container-width:  20px;
+
+html{
+	background: #1F2122;
+	height:100%;
+	width:100%;
+}
 body{
-  font-family: "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Hiragino Kaku Gothic Pro", Meiryo, "Malgun Gothic", sans-serif;
-  color: #333;
-  font-size: 14px;
+	width:100%;
+	min-height: 100%;
+	overflow-x:hidden;
+	background-color: #32353a;
+	padding:$main-container-width 1.2rem;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+
+
+.triangle-topright {
+    width: 0;
+    height: 0;
+    border-top: 1rem solid #1F2122;
+    border-left: 1rem solid transparent; 
+    position:fixed;
+    right:$main-container-width;
+    top:$main-container-width;
+}
+.triangle-bottomleft {
+    width: 0;
+    height: 0;
+    border-bottom: 1rem solid #1F2122;
+    border-right: 1rem solid transparent;
+    position:fixed;
+    left:$main-container-width;
+    bottom:$main-container-width;
+}
+.main-border{
+    position: fixed;
+    background: #1f2122;
+    display:block;
+}
+.border-top{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $main-container-width;
+}
+.border-bottom{
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: $main-container-width;
+}
+.border-left{
+    top: 0;
+    left: 0;
+    width: $main-container-width;
+    height: 100%;
+}
+.border-right{
+    top: 0;
+    right: 0;
+    width: $main-container-width;
+    height: 100%;
 }
 
-a{
-  color:#07c;
-  text-decoration: none;
-  &:hover{
-    color:#3af;
-    text-decoration: underline;
-  }
-}
 
-.container{
-  width:1000px;
-  margin:0 auto;
+.margin-center{
+     margin-left:auto;
+     margin-right: auto;
 }
-.text-center{
-  text-align: center;
-}
+/*body end*/

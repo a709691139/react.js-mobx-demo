@@ -1,0 +1,131 @@
+
+.home{
+	// background: url('./assets/bg.jpg');
+	.title{
+		color:#fff;
+		text-align: center;
+	    margin-bottom: 30px;
+        font-weight: 100;
+	}
+	.intro{
+		p{
+		    font-size: 0.4rem;
+		    line-height: 1.85;
+		    width: 80%;
+		    margin: 0 auto;
+		    color:#b7bcbe;
+		    text-align: center;
+		    .blue{
+		    	color:#3CF;
+		    }
+		    .green{
+		    	color:#0F0;
+		    }
+		    .white{
+		    	color:#fff;
+		    }
+		}
+	}
+	.list-icons{
+		text-align: center;
+		margin-top: 1.5rem;
+		margin-bottom: 2.22rem;
+		li{
+			display: inline-block;
+    		margin: 0.333rem 0.888rem;
+			i{
+				display:block;
+				color:#fff;
+				font-size: 1rem;
+			}
+		}
+	}
+	.projectBox{
+		height:10.22rem;
+		.left{
+			float:left;
+			width:50%;
+		    padding: 1.333rem;
+		    background-color: #46494f;
+			.title{
+			    color: #fff;
+			    font-size: 0.8rem;
+			    margin-top: 0;
+			    margin-bottom: 0.8rem;
+			    text-align: left;
+			}
+			.word{
+				font-size: 0.45rem;
+				color:rgb(183, 188, 190);
+			}
+			a{
+				color: #fff;
+			    text-transform: uppercase;
+			    font-size: 12px;
+			    padding: 10px 15px;
+			    display: inline-block;
+			    background: #a95bc3;
+			    font-weight: normal;
+			}
+		}
+		.right{
+			float:left;
+			width:50%;
+			li{
+				float:left;
+				width:50%;
+				padding-right: 15px;
+    			padding-left: 15px;
+    			margin-bottom: 30px;
+			    position: relative;
+			    overflow: hidden;
+			    div{
+			    	width:100%;
+			    	height:100%;
+			    	border: 3px solid #1a1c1f;
+			    	position:relative;
+			    	overflow:hidden;
+			    }
+				img{
+					width:100%;
+				}
+				span{
+					display:block;
+				    position: absolute;
+				    width: 100%;
+				    height: 100%;
+				    top: 0;
+				    left: 0;
+				    background: rgba(169,91,195,0.9);
+				    text-align: center;
+				    opacity: 0;
+				    -webkit-transition: all 200ms ease-in-out;
+				    -moz-transition: all 200ms ease-in-out;
+				    -ms-transition: all 200ms ease-in-out;
+				    -o-transition: all 200ms ease-in-out;
+				    transition: all 200ms ease-in-out;
+				    -moz-transform: rotate(45deg);
+				    -ms-transform: rotate(45deg);
+				    -o-transform: rotate(45deg);
+				    -webkit-transform: rotate(45deg);
+				    transform: rotate(45deg);
+				    h4{
+						top:50%;
+						transform: translateY(-50%);
+						font-size: 0.4rem;
+						color:#fff;
+						position: relative;
+				    }
+				}
+				&:hover span{
+					opacity: 1;
+				    -moz-transform: rotate(0);
+				    -ms-transform: rotate(0);
+				    -o-transform: rotate(0);
+				    -webkit-transform: rotate(0);
+				    transform: rotate(0);
+				}
+			}
+		}
+	}
+}

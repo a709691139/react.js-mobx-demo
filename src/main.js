@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import router from './routes';
+import css from './styles/core.scss';
 // ========================================================
 // Store Instantiation
 // ========================================================

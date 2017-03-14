@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 import { observable,action } from 'mobx';
-import './index.scss';
+
 
 class Counter extends Component{
   constructor(props) {
@@ -14,7 +14,7 @@ class Counter extends Component{
   }
   render(){
     return(
-      <div className="what">
+      <div>
         what Page 
         <div style={{ marginRight:'20px',color:'#0f0' }}>{this.props.location.state.userid}</div>
         <div>{this.props.location.query.age}</div>

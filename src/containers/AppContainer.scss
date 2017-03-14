@@ -1,3 +1,4 @@
+
 .Image {
   position: absolute;
   height: 400px;
@@ -42,4 +43,28 @@
 
 .example-leave.example-leave-active {
   opacity: 0;
+}
+
+
+$max-width:  1090px;
+
+.header{
+  border-bottom: 2px solid #46494f;
+  padding: 1.33rem 0;
+  margin-bottom: 1.77rem;
+  max-width: $max-width;
+
+  .leftLogo{
+    color:#fff;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.66rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    float: left;
+  }
+}
+
+.mainContainer{
+  max-width: $max-width;
 }

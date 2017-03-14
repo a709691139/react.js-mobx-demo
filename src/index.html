@@ -1,11 +1,51 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>黑喵警长的react mobx demo</title>
+  <title> 郑锦鹏-个人网站 </title>
   <meta charset="utf-8">
+  <meta name="author" content="郑锦鹏" />
+  <meta name="keywords" content="郑锦鹏,个人网站,郑锦鹏的个人网站" />
+  <meta name="description" content="郑锦鹏,个人网站,郑锦鹏的个人网站" />
+  <meta name="renderer" content="webkit" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <div id="root" style="height: 100%"></div>
+  <div id="root" class='clearfix' style="height: 100%"></div>
+  <span class='main-border border-top'></span>
+  <span class='main-border border-bottom'></span>
+  <span class='main-border border-left'></span>
+  <span class='main-border border-right'></span>
+  <span class='triangle-topright'></span>
+  <span class='triangle-bottomleft'></span>
 </body>
+<script>
+	(function (doc, win) {
+		var docEl = doc.documentElement,
+				resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+				recalc = function () {
+					var clientWidth = docEl.clientWidth;
+					if (!clientWidth) {
+						return;
+					}
+					else if(clientWidth>720)
+					{
+						docEl.style.fontSize = 45 + 'px';
+				 	}
+					else if(clientWidth<320 )
+					{
+						docEl.style.fontSize = 20 + 'px';
+					}
+					else if(clientWidth<720 || clientWidth>320)
+					{
+						docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+					}
+				};
+
+		if (!doc.addEventListener) return;
+		win.addEventListener(resizeEvt, recalc, false);
+		doc.addEventListener('DOMContentLoaded', recalc, false);
+	})
+	(document, window);
+</script>
 </html>

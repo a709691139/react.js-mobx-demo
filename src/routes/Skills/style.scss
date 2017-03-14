@@ -1,0 +1,34 @@
+
+.skills{
+	.title{
+		color:#fff;
+		text-align: center;
+	    margin-bottom: 30px;
+        font-weight: 100;
+	}
+	.intro{
+		width:75%;
+		margin:0 auto;
+		p{
+		    font-size: 0.4rem;
+		    line-height: 1.85;
+		    width: 80%;
+		    margin: 0 auto;
+		    color:#b7bcbe;
+		}
+	}
+	.btnBox{
+		text-align: center;
+		.btn{
+			margin: 0 auto;
+		    background: #d5b14f;
+		    text-transform: uppercase;
+		    font-weight: 700;
+		    font-size: 12px;
+		    padding: 12px 20px;
+		    color: #fff ;
+		    letter-spacing:2px;
+		}
+	}
+	
+}

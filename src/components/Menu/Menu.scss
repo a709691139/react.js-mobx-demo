@@ -1,0 +1,27 @@
+.menuBox{
+	float:right;
+	text-align: right;
+
+	ul{
+	}
+	li{
+		float:left;
+		padding: 10px 15px;
+	    text-transform: uppercase;
+	    font-size: 13px;
+	    a{
+	    	color: #fff;
+	    	padding: 10px 15px;
+	    	transition: all 100ms ease-in-out;
+	    	&.active{
+	    		background: #4e91c9;
+	    		text-decoration: underline;
+	    		opacity:1  !important;
+	    	}
+	    	&:hover{
+	    		text-decoration: none;
+	    		opacity:0.7;
+	    	}
+	    }
+	}	
+}
