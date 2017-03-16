@@ -1,34 +1,123 @@
 
 .skills{
-	.title{
-		color:#fff;
-		text-align: center;
-	    margin-bottom: 30px;
-        font-weight: 100;
+	.topBox{
+		margin-bottom: 2rem;
+		.title{
+			color:#fff;
+			text-align: center;
+		    margin-bottom: 0.666rem;
+	        font-weight: 100;
+		}
+		.intro{
+			width:75%;
+			margin:0 auto;
+			p{
+			    font-size: 0.4rem;
+			    line-height: 1.85;
+			    width: 80%;
+			    margin: 0 auto;
+			    color:#b7bcbe;
+			}
+		}
+		.btnBox{
+			text-align: center;
+			.btn{
+				margin: 0 auto;
+			    background: #d5b14f;
+			    text-transform: uppercase;
+			    font-weight: 700;
+			    font-size: 0.27rem;
+			    padding: 0.27rem 0.45rem;
+			    color: #fff ;
+			    letter-spacing:2px;
+			}
+		}	
 	}
-	.intro{
-		width:75%;
-		margin:0 auto;
-		p{
-		    font-size: 0.4rem;
-		    line-height: 1.85;
-		    width: 80%;
-		    margin: 0 auto;
-		    color:#b7bcbe;
+	.bottomBox{
+		width:100%;
+		.col{
+			width:33.33%;
+			float:left;
+			height:10rem;
+			padding: 0 0.33rem;
+			margin-bottom: 0.666rem;
+			.inner{
+				width:100%;
+				height:100%;
+				overflow:hidden;
+				position:relative;
+				padding: 0.44rem;
+			}
+			&:hover{
+				.bg{
+					transform: scale(1.2, 1.2);
+				}
+			}
+			.bg{
+				position: absolute;
+			    width: 100%;
+			    height: 100%;
+			    top: 0;
+			    left: 0;
+			    background-size: cover;
+			    background-repeat: no-repeat;
+			    z-index: 8;
+		        transition: all 200ms ease-in-out;
+		        &.bg-pink{
+		        	background:url('./assets/blog-pink.jpg') no-repeat 100%;
+		        }
+		        &.bg-blue{
+		        	background:url('./assets/blog-blue.jpg') no-repeat 100%;
+		        }
+		        &.bg-green{
+		        	background:url('./assets/blog-green.jpg') no-repeat 100%;
+		        }
+			}
+			.content{
+			    position: relative;
+			    z-index: 9;
+			    background: #fff;
+			    padding: 1.33rem 0.666rem;
+			    height:100%;
+			    text-align: center;
+			    h3{
+		    	    color: #32353a;
+		    	    font-size: 0.45rem;
+				    font-weight: normal;
+				    letter-spacing: 1px;
+			    }
+			    .solid-line{
+			    	width: 1.33rem;
+				    height: 2px;
+				    background: #32353a;
+				    display: block;
+				    margin-left: auto;
+				    margin-right: auto;
+				    margin-top: 0.67rem;
+				    margin-bottom: 0.67rem;
+			    }
+			    p{
+			    	font-size: 0.27rem;
+		    	    line-height: 1.75em;
+					text-align: left;
+					text-indent: 0.54rem;
+			    }
+			    .checkbtn{
+		    	    color: #32353a;
+				    font-size: 0.27rem;
+				    text-transform: uppercase;
+				    font-weight: 700;
+				    padding: 0.27rem 0.45rem;
+				    background: #eee;
+				    position:absolute;
+				    bottom:0.5rem;
+				    left: 50%;
+    				transform: translateX(-50%);
+				    &:hover{
+				    	color:rgb(109, 116, 126);
+				    }
+			    }
+			}
 		}
 	}
-	.btnBox{
-		text-align: center;
-		.btn{
-			margin: 0 auto;
-		    background: #d5b14f;
-		    text-transform: uppercase;
-		    font-weight: 700;
-		    font-size: 12px;
-		    padding: 12px 20px;
-		    color: #fff ;
-		    letter-spacing:2px;
-		}
-	}
-	
 }
