@@ -8,7 +8,7 @@ class AppContainer extends Component {
 
   render() {
   	const key = this.props.location.pathname.split('/')[1] || 'root';
-    return <div>
+    return <div className='pageContainer'>
       <div className="header clearfix margin-center">
         <div className="leftLogo">JinPeng</div>
         <Menu />

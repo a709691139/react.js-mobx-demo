@@ -21,7 +21,7 @@ class Skills extends Component{
             <p>3、掌握基础原生js, jq,  框架react+angular。</p>
             <p>4、移动端安卓和苹果应用开发，react native 技术。</p>
             <p>5、后端php开发，数据库操作。</p>
-            <p>6、web canvas游戏开发。</p>
+            <p>6、pixi.js库开发纯canvas游戏或网页。</p>
           </div>
           <div className="btnBox"><Link to='/Skills' className="btn">查看项目</Link></div>
         </div>

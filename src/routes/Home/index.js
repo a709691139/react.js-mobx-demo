@@ -30,7 +30,6 @@ class Home extends Component {
     };
   }
 
-
   render() {
     return (
       <div className='home'>
@@ -38,8 +37,8 @@ class Home extends Component {
         <div className='intro'>
           <p>郑锦鹏：23岁，两年工作经验，本科学历，吉林大学珠海学院；</p>
           <p>热爱 <span className='blue'>web app</span> 开发，使用原生js、jquery、<span className='green'>angular</span>框架、<span className='green'>reactjs</span>框架 开发；</p>
-          <p>可做安卓与苹果 手机应用，使用react native开发；</p>
-          <p>web canvas简易游戏开发。</p>
+          <p>安卓与苹果 手机应用开发，使用react native开发；</p>
+          <p>web canvas游戏开发，纯canvas网页开发，使用pixi.js库。</p>
         </div>
         <ul className='list-icons'>
           <li>

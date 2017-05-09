@@ -1,36 +1,32 @@
-import React, {
-  Component
-} from 'react';
-import {
-  observer
-} from 'mobx-react';
-import {
-  observable,
-  action
-} from 'mobx';
-// import  './style.scss';
+import React, { Component } from 'react';
+import { observer } from 'mobx-react';
+import { observable,action } from 'mobx';
+import  './style.scss';
+import service from '../../service';
 
-class Projects extends Component {
+class Projects extends Component{
   constructor(props) {
     super(props);
-    this.state = {
-      radioList: ['all', 'web', 'webApp', 'nativeApp'],
-      selected: 'all',
-      dataList: {}
+    this.state={
+      radioList:['all','web','webApp','nativeApp'],
+      selected:'all',
+      dataList :[],
     }
   }
 
-  changeRadio(str) {
+  changeRadio(str){
     this.setState({
-      selected: str
+      selected:str
     });
   }
 
-  componentDidMount() {
-
+  componentDidMount(){
+    this.setState({
+      dataList: service.getProjects()
+    });
   }
-  render() {
-    return (
+  render(){
+    return(
       <div className='Projects'>
         <div className='radioBox'>
           <ul>
@@ -47,10 +43,23 @@ class Projects extends Component {
           </ul>
         </div>
         <ul className='list'>
-          <li>
-            <span className='triangle triangle-left-bottom'></span>
-            <span className='triangle triangle-right-bottom'></span>
-          </li>
+          {
+            this.state.dataList.map((value,index)=>{
+              return(
+                <li  key={index}>
+                  <img src={value.images[0]}/>
+                  <p className='title'>{value.title}</p>
+                    {
+                      value.intro.map((v,i)=>{
+                        return <p key={i} className='intro'>{v}</p>
+                      })
+                    }
+                  <span className='triangle triangle-left-bottom'></span>
+                  <span className='triangle triangle-right-bottom'></span>
+                </li>
+              );
+            })
+          }
         </ul>
       </div>
 
@@ -59,3 +68,4 @@ class Projects extends Component {
 }
 
 export default Projects;
+

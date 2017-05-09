@@ -1,0 +1,33 @@
+.Contact{
+	ul{
+		text-align: center;
+		margin:0 auto;
+		li{
+			color:#fff;
+			font-size: 0.6rem;
+			margin-bottom: 0.2rem;
+			i{
+				display:inline-block;
+			}
+			p{
+				display:inline-block;
+			}
+			a{
+				color:#fff;
+			}
+		}
+	}
+	.btnBox{
+		text-align: center;
+		.btn{
+			margin: 0 auto;
+		    background: #d5b14f;
+		    text-transform: uppercase;
+		    font-weight: 700;
+		    font-size: 0.27rem;
+		    padding: 0.27rem 0.45rem;
+		    color: #fff ;
+		    letter-spacing:2px;
+		}
+	}	
+}

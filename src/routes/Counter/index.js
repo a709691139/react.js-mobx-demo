@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 import { observable,action } from 'mobx';
-import { hashHistory, withRouter} from 'react-router'
+import { hashHistory, withRouter} from 'react-router';
 import  './counter.scss';
 class CounterStore {
   @observable count = 1;
