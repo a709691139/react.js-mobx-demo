@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
-import  './style.scss';
+import React, {
+  Component
+} from 'react';
+// import  './style.scss';
 
-class Contact extends Component{
+class Contact extends Component {
   constructor(props) {
     super(props);
   }
-  componentDidMount(){
-  }
-  render(){
-    return(
+  componentDidMount() {}
+  render() {
+    return (
       <div className='Contact'>
         <ul>
           <li><i className='ion-ios-telephone'></i> : <p>15992690565</p></li>
@@ -23,4 +24,3 @@ class Contact extends Component{
 }
 
 export default Contact;
-

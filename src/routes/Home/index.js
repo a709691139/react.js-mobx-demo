@@ -1,39 +1,38 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router';
-import  './style.scss';
+import React, {
+  Component
+} from 'react';
+import {
+  Link
+} from 'react-router';
+import './style.scss';
 
-class Home extends Component{
+class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      productList:[
-        {
-          id:0,
-          name:'喵喵喵？',
-          img:'http://demo.cssmoban.com/cssthemes2/tpmo_421_raleway/img/1.jpg'
-        },
-        {
-          id:1,
-          name:'喵喵喵？',
-          img:'http://demo.cssmoban.com/cssthemes2/tpmo_421_raleway/img/1.jpg'
-        },
-        {
-          id:2,
-          name:'喵喵喵？',
-          img:'http://demo.cssmoban.com/cssthemes2/tpmo_421_raleway/img/1.jpg'
-        },
-        {
-          id:3,
-          name:'喵喵喵？',
-          img:'http://demo.cssmoban.com/cssthemes2/tpmo_421_raleway/img/1.jpg'
-        },
-      ]
+      productList: [{
+        id: 0,
+        name: '喵喵喵？',
+        img: 'http://demo.cssmoban.com/cssthemes2/tpmo_421_raleway/img/1.jpg'
+      }, {
+        id: 1,
+        name: '喵喵喵？',
+        img: 'http://demo.cssmoban.com/cssthemes2/tpmo_421_raleway/img/1.jpg'
+      }, {
+        id: 2,
+        name: '喵喵喵？',
+        img: 'http://demo.cssmoban.com/cssthemes2/tpmo_421_raleway/img/1.jpg'
+      }, {
+        id: 3,
+        name: '喵喵喵？',
+        img: 'http://demo.cssmoban.com/cssthemes2/tpmo_421_raleway/img/1.jpg'
+      }, ]
     };
   }
 
 
-  render(){
-    return(
+  render() {
+    return (
       <div className='home'>
         <h2 className='title'>前端开发工程师</h2>
         <div className='intro'>
@@ -91,4 +90,3 @@ class Home extends Component{
 }
 
 export default Home;
-

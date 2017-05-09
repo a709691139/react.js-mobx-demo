@@ -1,29 +1,36 @@
-import React, { Component } from 'react';
-import { observer } from 'mobx-react';
-import { observable,action } from 'mobx';
-import  './style.scss';
+import React, {
+  Component
+} from 'react';
+import {
+  observer
+} from 'mobx-react';
+import {
+  observable,
+  action
+} from 'mobx';
+// import  './style.scss';
 
-class Projects extends Component{
+class Projects extends Component {
   constructor(props) {
     super(props);
-    this.state={
-      radioList:['all','web','webApp','nativeApp'],
-      selected:'all',
-      dataList :{},
+    this.state = {
+      radioList: ['all', 'web', 'webApp', 'nativeApp'],
+      selected: 'all',
+      dataList: {}
     }
   }
 
-  changeRadio(str){
+  changeRadio(str) {
     this.setState({
-      selected:str
+      selected: str
     });
   }
 
-  componentDidMount(){
+  componentDidMount() {
 
   }
-  render(){
-    return(
+  render() {
+    return (
       <div className='Projects'>
         <div className='radioBox'>
           <ul>
@@ -52,4 +59,3 @@ class Projects extends Component{
 }
 
 export default Projects;
-
