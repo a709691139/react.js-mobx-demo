@@ -1,6 +1,11 @@
 import React from 'react';
 
-import { Router, hashHistory, Route, IndexRoute } from 'react-router';
+import {
+  Router,
+  hashHistory,
+  Route,
+  IndexRoute
+} from 'react-router';
 
 import AppContainer from '../containers/AppContainer';
 import Counter from './Counter';
@@ -14,15 +19,17 @@ import Contact from './Contact';
 
 
 
-let islogin = ({params}, replace) => {
-	console.log('onEnter');
-	if(false){
-		replace('/');
-		console.log("未登录 跳转首页");
-	}
+let islogin = ({
+  params
+}, replace) => {
+  console.log('onEnter');
+  if (false) {
+    replace('/');
+    console.log("未登录 跳转首页");
+  }
 };
 
-const routes =  <Route path="/" component={AppContainer}>
+const routes = <Route path="/" component={AppContainer}>
 
                   <IndexRoute component={Home}/>
 
@@ -39,8 +46,6 @@ const routes =  <Route path="/" component={AppContainer}>
 
 
 const router = <Router routes={routes} history={hashHistory}/>;
-
-
 
 
 

@@ -12,24 +12,22 @@ const __TEST__ = config.globals.__TEST__
 
 debug('Creating configuration.')
 const webpackConfig = {
-  name: 'client',
-  target: 'web',
-  devtool: config.compiler_devtool,
-  resolve: {
-    root: paths.client(),
-    extensions: ['', '.js', '.jsx', '.json']
-  },
-  module: {}
-}
-// ------------------------------------
-// Entry Points
-// ------------------------------------
+    name: 'client',
+    target: 'web',
+    devtool: config.compiler_devtool,
+    resolve: {
+      root: paths.client(),
+      extensions: ['', '.js', '.jsx', '.json']
+    },
+    module: {}
+  }
+  // ------------------------------------
+  // Entry Points
+  // ------------------------------------
 const APP_ENTRY = paths.client('main.js')
 
 webpackConfig.entry = {
-  app: __DEV__
-    ? [APP_ENTRY].concat(`webpack-hot-middleware/client?path=${config.compiler_public_path}__webpack_hmr`)
-    : [APP_ENTRY],
+  app: __DEV__ ? [APP_ENTRY].concat(`webpack-hot-middleware/client?path=${config.compiler_public_path}__webpack_hmr`) : [APP_ENTRY],
   vendor: config.compiler_vendors
 }
 
@@ -155,22 +153,33 @@ webpackConfig.postcss = [
 
 // File loaders
 /* eslint-disable */
-webpackConfig.module.loaders.push(
-  { test: /\.woff(\?.*)?$/,  loader: 'url?prefix=fonts/&name=[hash:base64:20].[ext]&limit=10000&mimetype=application/font-woff' },
-  { test: /\.woff2(\?.*)?$/, loader: 'url?prefix=fonts/&name=[hash:base64:20].[ext]&limit=10000&mimetype=application/font-woff2' },
-  { test: /\.otf(\?.*)?$/,   loader: 'file?prefix=fonts/&name=[hash:base64:20].[ext]&limit=10000&mimetype=font/opentype' },
-  { test: /\.ttf(\?.*)?$/,   loader: 'url?prefix=fonts/&name=[hash:base64:20].[ext]&limit=10000&mimetype=application/octet-stream' },
-  { test: /\.eot(\?.*)?$/,   loader: 'file?prefix=fonts/&name=[hash:base64:20].[ext]' },
-  { test: /\.svg(\?.*)?$/,   loader: 'url?prefix=fonts/&name=[hash:base64:20].[ext]&limit=10000&mimetype=image/svg+xml' },
-  { test: /\.(png|jpg|gif)$/,   
+webpackConfig.module.loaders.push({
+    test: /\.woff(\?.*)?$/,
+    loader: 'url?prefix=fonts/&name=[hash:base64:20].[ext]&limit=10000&mimetype=application/font-woff'
+  }, {
+    test: /\.woff2(\?.*)?$/,
+    loader: 'url?prefix=fonts/&name=[hash:base64:20].[ext]&limit=10000&mimetype=application/font-woff2'
+  }, {
+    test: /\.otf(\?.*)?$/,
+    loader: 'file?prefix=fonts/&name=[hash:base64:20].[ext]&limit=10000&mimetype=font/opentype'
+  }, {
+    test: /\.ttf(\?.*)?$/,
+    loader: 'url?prefix=fonts/&name=[hash:base64:20].[ext]&limit=10000&mimetype=application/octet-stream'
+  }, {
+    test: /\.eot(\?.*)?$/,
+    loader: 'file?prefix=fonts/&name=[hash:base64:20].[ext]'
+  }, {
+    test: /\.svg(\?.*)?$/,
+    loader: 'url?prefix=fonts/&name=[hash:base64:20].[ext]&limit=10000&mimetype=image/svg+xml'
+  }, {
+    test: /\.(png|jpg|gif)$/,
     loader: 'url-loader',
     query: {
       limit: 8192,
       name: 'img/[hash].[ext]'
-    } 
-  }
-)
-/* eslint-enable */
+    }
+  })
+  /* eslint-enable */
 
 // ------------------------------------
 // Finalize Configuration
