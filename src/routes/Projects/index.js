@@ -3,6 +3,7 @@ import { observer } from 'mobx-react';
 import { observable,action } from 'mobx';
 import  './style.scss';
 import service from '../../service';
+import {  Link } from 'react-router';
 
 class Projects extends Component{
   constructor(props) {
@@ -11,13 +12,16 @@ class Projects extends Component{
       radioList:['all','web','webApp','nativeApp'],
       selected:'all',
       dataList :[],
-    }
+    };
   }
 
   changeRadio(str){
     this.setState({
       selected:str
     });
+  }
+  toDetailPage(id){
+    this.props.router.push({ pathname: `/Projects/Detail/${id}` });
   }
 
   componentDidMount(){
@@ -28,26 +32,31 @@ class Projects extends Component{
   render(){
     return(
       <div className='Projects'>
-        <div className='radioBox'>
-          <ul>
-            {
-              this.state.radioList.map((value,index)=>{
-                return <li 
-                  key={index}
-                  className={value==this.state.selected?'on':null} 
-                  onClick={()=>{this.changeRadio(value)}}>
-                  {value}
-                </li>
-              })
-            }
-          </ul>
-        </div>
+        {
+          false &&
+          <div className='radioBox'>
+            <ul>
+              {
+                this.state.radioList.map((value,index)=>{
+                  return <li 
+                    key={index}
+                    className={value==this.state.selected?'on':null} 
+                    onClick={()=>{this.changeRadio(value)}}>
+                    {value}
+                  </li>
+                })
+              }
+            </ul>
+          </div>
+        }
         <ul className='list'>
           {
             this.state.dataList.map((value,index)=>{
               return(
-                <li  key={index}>
-                  <img src={value.images[0]}/>
+                <li  key={index} >
+                  <div className='top'>
+                   <Link  to={"/Projects/Detail/"+value.id}><img src={value.images[0]}/></Link>
+                  </div>
                   <p className='title'>{value.title}</p>
                     {
                       value.intro.map((v,i)=>{

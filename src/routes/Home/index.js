@@ -5,29 +5,21 @@ import {
   Link
 } from 'react-router';
 import './style.scss';
+import service from '../../service';
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      productList: [{
-        id: 0,
-        name: '喵喵喵？',
-        img: 'http://demo.cssmoban.com/cssthemes2/tpmo_421_raleway/img/1.jpg'
-      }, {
-        id: 1,
-        name: '喵喵喵？',
-        img: 'http://demo.cssmoban.com/cssthemes2/tpmo_421_raleway/img/1.jpg'
-      }, {
-        id: 2,
-        name: '喵喵喵？',
-        img: 'http://demo.cssmoban.com/cssthemes2/tpmo_421_raleway/img/1.jpg'
-      }, {
-        id: 3,
-        name: '喵喵喵？',
-        img: 'http://demo.cssmoban.com/cssthemes2/tpmo_421_raleway/img/1.jpg'
-      }, ]
+      productList: [],
+      lastestProject:null,
     };
+  }
+
+  componentDidMount(){
+    this.setState({
+      productList: service.getProjects()
+    });
   }
 
   render() {
@@ -71,13 +63,15 @@ class Home extends Component {
           <div className='right'>
             <ul>
               {
-                this.state.productList.map((value,index)=>{
-                  return <li key={index}>
-                            <div>
-                              <img src={value.img} />
-                              <span><h4>{value.name}</h4></span>
-                              </div>
-                          </li>
+                this.state.productList.length && this.state.productList.map((value,index)=>{
+                  if(index<4){
+                    return <li key={index}>
+                              <div>
+                                <img src={value.images[0]} />
+                                <span><h4>{value.title}</h4></span>
+                                </div>
+                            </li>  
+                  }
                 })
               }
             </ul>

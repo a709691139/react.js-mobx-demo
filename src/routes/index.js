@@ -16,7 +16,7 @@ import Home from './Home';
 import Skills from './Skills';
 import Projects from './Projects';
 import Contact from './Contact';
-
+import ProjectsDetail from './Projects/Detail';
 
 
 let islogin = ({
@@ -36,8 +36,9 @@ const routes = <Route path="/" component={AppContainer}>
                   <route path="counter" component={Counter}/>
                   <route path="Skills" component={Skills}/>
                   <route path="Projects" component={Projects}/>
+                  <route path="Projects/Detail/:id" component={ProjectsDetail}/>
                   <route path="Contact" component={Contact}/>
-
+                  
                   <Route  path="what/:id" component={What} onEnter={islogin.bind(this)} onLeave={()=>{console.log('onLeave')}} />
 
                   <Route  path="*" component={Nothing}  />
