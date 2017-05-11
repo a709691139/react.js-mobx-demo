@@ -23,7 +23,7 @@ class Skills extends Component{
             <p>5、后端php开发，数据库操作。</p>
             <p>6、pixi.js库开发纯canvas游戏或网页。</p>
           </div>
-          <div className="btnBox"><Link to='/Skills' className="btn">查看项目</Link></div>
+          <div className="btnBox"><Link to={{ pathname: '/Projects', query: { type: 'all' } }} className="btn">查看项目</Link></div>
         </div>
         <div className='bottomBox clearfix'>
           <div className='col'>
@@ -33,7 +33,7 @@ class Skills extends Component{
                 <h3>普通网页制作</h3>
                 <span className='solid-line'></span>
                 <p>电脑、手机、h5页面、响应式网页都能制作，js特效动画，配合cms后台，购买域名服务器，一条龙服务。</p>
-                <a href='#' className='checkbtn'>查看项目</a>
+                <Link to={{ pathname: '/Projects', query: { type: 'web' } }} className="checkbtn">查看项目</Link>
               </div>
             </div>
           </div>
@@ -44,7 +44,7 @@ class Skills extends Component{
                 <h3>web app制作</h3>
                 <span className='solid-line'></span>
                 <p>各种网页app制作，采用angular@1.x或者react框架编写，后端方面用php开发。</p>
-                <a href='#' className='checkbtn'>查看项目</a>
+                <Link to={{ pathname: '/Projects', query: { type: 'webApp' } }} className="checkbtn">查看项目</Link>
               </div>
             </div>
           </div>
@@ -56,7 +56,7 @@ class Skills extends Component{
                 <span className='solid-line'></span>
                 <p>使用react native 开发 iOS 和 Android 原生应用。</p>
                 <p>已有3个上线项目。</p>
-                <a href='#' className='checkbtn'>查看项目</a>
+                <Link to={{ pathname: '/Projects', query: { type: 'nativeApp' } }} className="checkbtn">查看项目</Link>
               </div>
             </div>
           </div>

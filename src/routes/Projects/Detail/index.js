@@ -46,6 +46,10 @@ export default class Detail extends Component {
       <div className='Projects_detail'>
         <h1>{this.state.title}</h1>
         {
+          this.state.href &&
+          <a target='_blank' className='download' href={this.state.href}>详情</a>
+        }
+        {
           this.state.intro.map((v,i)=>{
             return <p key={i} className='intro'>{v}</p>
           })
