@@ -1,36 +1,47 @@
-import React, { Component } from 'react';
-import { observer } from 'mobx-react';
-import { observable,action } from 'mobx';
-import  './style.scss';
+import React, {
+  Component
+} from 'react';
+import {
+  observer
+} from 'mobx-react';
+import {
+  observable,
+  action
+} from 'mobx';
+import './style.scss';
 import service from '../../service';
-import {  Link } from 'react-router';
+import {
+  Link
+} from 'react-router';
 
-class Projects extends Component{
+class Projects extends Component {
   constructor(props) {
     super(props);
-    this.state={
-      radioList:['all','web','webApp','nativeApp'],
-      selected:'all',
-      dataList :[],
+    this.state = {
+      radioList: ['all', 'web', 'webApp', 'nativeApp'],
+      selected: 'all',
+      dataList: [],
     };
   }
 
-  changeRadio(str){
+  changeRadio(str) {
     this.setState({
-      selected:str
+      selected: str
     });
   }
-  toDetailPage(id){
-    this.props.router.push({ pathname: `/Projects/Detail/${id}` });
+  toDetailPage(id) {
+    this.props.router.push({
+      pathname: `/Projects/Detail/${id}`
+    });
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.setState({
       dataList: service.getProjects()
     });
   }
-  render(){
-    return(
+  render() {
+    return (
       <div className='Projects'>
         {
           false &&
@@ -77,4 +88,3 @@ class Projects extends Component{
 }
 
 export default Projects;
-

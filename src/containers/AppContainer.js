@@ -1,15 +1,27 @@
-import React, { Component, PropTypes } from 'react';
+import React, {
+  Component,
+  PropTypes
+} from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import { IndexLink, Link } from 'react-router';
+import {
+  IndexLink,
+  Link
+} from 'react-router';
 import './AppContainer.scss';
 import Menu from '../components/Menu';
 
 class AppContainer extends Component {
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      loadAnimation: false
+    };
+    this.timer = null;
+  }
   render() {
-  	const key = this.props.location.pathname.split('/')[1] || 'root';
+    const key = this.props.location.pathname.split('/')[1] || 'root';
     return <div className='pageContainer'>
-      <div className="header clearfix margin-center">
+      <div className={"header clearfix margin-center "+ (this.state.loadAnimation && "on")}>
         <div className="leftLogo">JinPeng</div>
         <Menu />
       </div>
@@ -22,6 +34,17 @@ class AppContainer extends Component {
         {React.cloneElement(this.props.children || <div />, { key })}
       </ReactCSSTransitionGroup>
     </div>
+  }
+  componentDidMount() {
+    this.timer = setTimeout(() => {
+      this.setState({
+        loadAnimation: true
+      });
+    }, 500);
+
+  }
+  componentWillUnmount() {
+    this.timer && clearTimeout(this.timer);
   }
 }
 /*

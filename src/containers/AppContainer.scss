@@ -61,7 +61,11 @@ $max-width:  1090px;
   padding: 1.33rem 0;
   margin-bottom: 1.77rem;
   max-width: $max-width;
-
+  transform:translateY(-4rem);
+  &.on{
+    transition: transform 0.7s;
+    transform:translateY(0rem);
+  }
   .leftLogo{
     color:#fff;
     font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;

@@ -11,20 +11,25 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      loadAnimation: false,
       productList: [],
-      lastestProject:null,
+      lastestProject: null,
     };
   }
 
-  componentDidMount(){
+  componentDidMount() {
+    console.log('home');
     this.setState({
       productList: service.getProjects()
     });
   }
+  componentWillUnmount() {
+
+  }
 
   render() {
     return (
-      <div className='home'>
+      <div className={'home '}>
         <h2 className='title'>前端开发工程师</h2>
         <div className='intro'>
           <p>郑锦鹏：23岁，两年工作经验，本科学历，吉林大学珠海学院；</p>
@@ -57,7 +62,17 @@ class Home extends Component {
         <div className='projectBox clearfix'>
           <div className='left'>
             <div className='title'>最新作品</div>
-            <div className='word'>Sed eu turpis vehicula, iaculis sapien eu, molestie libero. Cras ac urna in neque commodo sodales vel et dolor. Pellentesque aliquam semper lectus, nec consequat ex lacinia nec. </div>
+            <div className='word'>
+              {
+                this.state.productList.length && this.state.productList[0] &&
+                <p  style={{marginBottom:"10px"}}>{this.state.productList[0].title}：</p>
+              }
+              {
+                this.state.productList.length && this.state.productList[0].intro.map((v,i)=>{
+                  return <p key={i} >{v}</p>
+                })
+              }
+            </div>
             <Link to='/Projects' >查看更多</Link>
           </div>
           <div className='right'>
@@ -66,10 +81,12 @@ class Home extends Component {
                 this.state.productList.length && this.state.productList.map((value,index)=>{
                   if(index<4){
                     return <li key={index}>
-                              <div>
-                                <img src={value.images[0]} />
-                                <span><h4>{value.title}</h4></span>
+                              <Link  to={"/Projects/Detail/"+value.id}>
+                                <div>
+                                  <img src={value.images[0]} />
+                                  <span><h4>{value.title}</h4></span>
                                 </div>
+                              </Link>
                             </li>  
                   }
                 })

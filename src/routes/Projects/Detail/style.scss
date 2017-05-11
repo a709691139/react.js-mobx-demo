@@ -1,4 +1,45 @@
 
 .Projects_detail{
-
+  color: #fff;
+  h1{
+    text-align: center;
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+  .intro{
+    font-size: 0.6rem;
+    text-indent: 1.2rem;
+  }
+  .slider{
+    margin-top: 0.8rem;
+    height: 500px;
+    ul{
+      height:100%;
+      display: flex;
+      li{
+        height:100%;
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        img{
+          max-height: 100%;
+          width:auto;
+          margin:0 auto;
+        }
+      }
+    }
+    .slider-arrows-wrap{
+      .slider-arrow{
+        &.slider-arrow-left{}
+        &.slider-arrow-right{}
+      } 
+    }
+    .slider-dots-wrap{
+      .slider-dot{
+        &.slider-dot-selected{
+          border-color: #4e91c9;
+        }
+      } 
+    }
+  }
 }
