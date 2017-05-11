@@ -43,41 +43,40 @@ class Projects extends Component {
   render() {
     return (
       <div className='Projects'>
-        {
-          false &&
-          <div className='radioBox'>
-            <ul>
-              {
-                this.state.radioList.map((value,index)=>{
-                  return <li 
-                    key={index}
-                    className={value==this.state.selected?'on':null} 
-                    onClick={()=>{this.changeRadio(value)}}>
-                    {value}
-                  </li>
-                })
-              }
-            </ul>
-          </div>
-        }
+        <div className='radioBox'>
+          <ul>
+            {
+              this.state.radioList.map((value,index)=>{
+                return <li 
+                  key={index}
+                  className={value==this.state.selected?'on':null} 
+                  onClick={()=>{this.changeRadio(value)}}>
+                  {value}
+                </li>
+              })
+            }
+          </ul>
+        </div>
         <ul className='list'>
           {
             this.state.dataList.map((value,index)=>{
-              return(
-                <li  key={index} >
-                  <div className='top'>
-                   <Link  to={"/Projects/Detail/"+value.id}><img src={value.images[0]}/></Link>
-                  </div>
-                  <p className='title'>{value.title}</p>
-                    {
-                      value.intro.map((v,i)=>{
-                        return <p key={i} className='intro'>{v}</p>
-                      })
-                    }
-                  <span className='triangle triangle-left-bottom'></span>
-                  <span className='triangle triangle-right-bottom'></span>
-                </li>
-              );
+              if(this.state.selected=='all' || this.state.selected==value.type){
+                return(
+                  <li  key={index} >
+                    <div className='top'>
+                     <Link  to={"/Projects/Detail/"+value.id}><img src={value.images[0]}/></Link>
+                    </div>
+                    <p className='title'>{value.title}</p>
+                      {
+                        value.intro.map((v,i)=>{
+                          return <p key={i} className='intro'>{v}</p>
+                        })
+                      }
+                    <span className='triangle triangle-left-bottom'></span>
+                    <span className='triangle triangle-right-bottom'></span>
+                  </li>
+                );  
+              }
             })
           }
         </ul>

@@ -2,7 +2,7 @@
 .Projects{
 	.radioBox{
 		text-align: center;
-		margin-bottom: 2rem;
+		margin-bottom: 1rem;
 		ul{
 			li{
 				margin: 0;
@@ -41,6 +41,7 @@
 		display:flex;
 		flex-wrap:wrap;
 		justify-content:space-between;
+		overflow: hidden;
 		li{
 			width:49%;
 			height:10rem;
