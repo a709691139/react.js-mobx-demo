@@ -44,6 +44,9 @@ export default class Slider extends Component {
   componentDidMount() {
     this.goPlay();
   }
+  componentWillUnmount(){
+    this.autoPlayFlag && clearInterval(this.autoPlayFlag);
+  }
 
   render() {
     let count = this.props.items.length;

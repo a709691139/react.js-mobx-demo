@@ -1,7 +1,7 @@
 .menuBox{
 	float:right;
 	text-align: right;
-
+	position:relative;
 	ul{
 	}
 	li{
@@ -24,4 +24,34 @@
 	    	}
 	    }
 	}	
+}
+
+@media screen and (max-width: 1000px) { 
+  .menuBox{
+  	float:none;
+  	clear:both;
+  	display:none;
+  	overflow: hidden;
+  	transition:all 0.5s;
+    ul{
+    	background:#26282c;
+    	padding: 10px 0;
+    	margin-top:70px;
+    	li{
+    		float:none;
+    		text-align: left;
+    		a{
+		    	color: #fff;
+		    	text-decoration: none !important;
+		    	&.active{
+		    		background:transparent;;
+		    		color:#4e91c9;
+		    	}
+		    	&:hover{
+		    		color:#2a6496;
+		    	}
+		    }
+    	}
+    }
+   }
 }

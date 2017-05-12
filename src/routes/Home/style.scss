@@ -87,7 +87,7 @@
 				opacity:0;
 				float:left;
 				width:50%;
-				height:145px;
+				height:3.5rem;
 				padding-right: 15px;
   			padding-left: 15px;
   			margin-bottom: 30px;
@@ -154,6 +154,25 @@
 		}
 	}
 }
+
+@media screen and (max-width: 720px) { 
+  .home{
+  	.projectBox{
+  		.left{
+  			width:100%;
+  			margin-bottom: 1rem;
+  		}
+  		.right{
+  			width:100%;
+  			li{
+  				height: 7rem;
+  			}
+  		}
+  	}
+	}
+}
+
+
 
 //title
 @keyframes HomeTitleAnimation

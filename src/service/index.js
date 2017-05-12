@@ -54,14 +54,14 @@ class Service {
     }, {
       "type": "nativeApp",
       "title": "跳舞宝手机app@2.x",
-      "href": "等上传网盘",
+      "href": "http://pan.baidu.com/s/1qYhSaFa",
       "images": ["http://i1.piimg.com/593933/1ac7b485e3132a9e.png", "http://i1.piimg.com/593933/360ed9eda99f5db7s.png", "http://i1.piimg.com/593933/9d843e617fc5aed7s.png", "http://i1.piimg.com/593933/1be5229880b3a939s.png", "http://i1.piimg.com/593933/149d1ca995d5a433s.png"],
       "intro": ["未上线，安卓和苹果，采用react native+ mobx技术。", "已完成了软件前端界面和功能实现，后端未完成。", "功能：展示信息、扫码、搜索、手机本地音乐视频播放，管理下载的音乐和视频，蓝牙连接音响，门店地图搜索。"],
       "id": 2
     }, {
       "type": "nativeApp",
       "title": "健康中心app",
-      "href": "等上传网盘",
+      "href": "http://pan.baidu.com/s/1miNXADq",
       "images": ["http://i4.buimg.com/593933/f37f908223188799s.jpg", "http://i4.buimg.com/593933/1da661fb57e31a26s.png", "http://i4.buimg.com/593933/015998c1483919f6s.jpg", "http://i4.buimg.com/593933/373ea53380fc748es.jpg", "http://i4.buimg.com/593933/8b23e4aac67ed146s.jpg"],
       "intro": ["已上线，安卓和苹果，采用react native+ mobx技术。", "主要用来获取用户健康数据，然后转成图表展示。"],
       "id": 3

@@ -39,6 +39,8 @@ export default class Detail extends Component {
       "images": data.images,
       "intro": data.intro,
       "id": data.id
+    }, () => {
+      document.body.scrollTop = 0;
     });
   }
   render() {

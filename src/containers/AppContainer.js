@@ -23,7 +23,8 @@ class AppContainer extends Component {
     return <div className='pageContainer'>
       <div className={"header clearfix margin-center "+ (this.state.loadAnimation && "on")}>
         <div className="leftLogo">JinPeng</div>
-        <Menu />
+        <i className='ion-navicon' onClick={()=>this.refs["menu"].toggleMenuBox()}></i>
+        <Menu ref="menu" />
       </div>
     	
     	<ReactCSSTransitionGroup

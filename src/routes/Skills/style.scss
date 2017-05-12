@@ -65,12 +65,15 @@
 		        transition: all 200ms ease-in-out;
 		        &.bg-pink{
 		        	background:url('./assets/blog-pink.jpg') no-repeat 100%;
+		        	background-size: 100% 100%;
 		        }
 		        &.bg-blue{
 		        	background:url('./assets/blog-blue.jpg') no-repeat 100%;
+							background-size: 100% 100%;
 		        }
 		        &.bg-green{
 		        	background:url('./assets/blog-green.jpg') no-repeat 100%;
+		        	background-size: 100% 100%;
 		        }
 			}
 			.content{
@@ -121,3 +124,15 @@
 		}
 	}
 }
+
+@media screen and (max-width: 720px) { 
+  .skills{
+  	.bottomBox{
+  		.col{
+  			width:100%;
+  			margin-bottom: 1rem;
+  		}
+  	}
+	}
+}
+
