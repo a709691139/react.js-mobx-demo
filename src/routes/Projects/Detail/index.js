@@ -11,6 +11,9 @@ import {
 import './style.scss';
 import service from 'service';
 import Slider from './Slider';
+import {
+  Link
+} from 'react-router';
 
 export default class Detail extends Component {
   constructor(props) {
@@ -24,8 +27,13 @@ export default class Detail extends Component {
       "id": 0
     };
   }
-
+  componentWillReceiveProps(props) {
+    console.log(this.props);
+    console.log('componentWillReceiveProps', this.props.params.id);
+    this.componentDidMount();
+  }
   componentDidMount() {
+    console.log("加载");
     let id = this.props.params.id;
     let sendData = {
       id: id
@@ -43,16 +51,21 @@ export default class Detail extends Component {
       document.body.scrollTop = 0;
     });
   }
+  componentWillUnmount() {
+    console.log('unmount');
+  }
   render() {
     return (
       <div className='Projects_detail'>
+        <Link to={`/Projects/Detail/${parseInt(this.props.params.id)+1}`} style={{color:"#fff"}}>跳转</Link>
+        <button onClick={()=>{this.props.history.goBack()}}> 返回</button>
         <h1>{this.state.title}</h1>
         {
           this.state.href &&
           <a target='_blank' className='download' href={this.state.href}>详情</a>
         }
         {
-          this.state.intro.map((v,i)=>{
+          this.state.intro && this.state.intro.map((v,i)=>{
             return <p key={i} className='intro'>{v}</p>
           })
         }

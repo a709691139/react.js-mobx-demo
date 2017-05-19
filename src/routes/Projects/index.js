@@ -36,14 +36,19 @@ class Projects extends Component {
   }
 
   componentDidMount() {
+    console.log("detailList getdata");
     this.setState({
       dataList: service.getProjects()
-    },()=>{
+    }, () => {
       document.body.scrollTop = 0;
     });
-    const { type } = this.props.location.query;
-    if(type && this.state.radioList.indexOf(type)!=-1){
-      this.setState({selected:type});
+    const {
+      type
+    } = this.props.location.query;
+    if (type && this.state.radioList.indexOf(type) != -1) {
+      this.setState({
+        selected: type
+      });
     }
   }
   render() {

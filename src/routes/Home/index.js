@@ -5,9 +5,27 @@ import {
   Link
 } from 'react-router';
 import './style.scss';
-import service from '../../service';
+import service from 'service';
+import {
+  DatePicker
+} from 'antd';
+
+import {
+  readonly
+} from 'core-decorators';
+
+import {
+  withRouter
+} from 'react-router';
+
+function didmount(target, name, descriptor) {
+  //console.log(target, name, descriptor);
+  return descriptor;
+}
 
 class Home extends Component {
+  @readonly
+  time = 233;
   constructor(props) {
     super(props);
     this.state = {
@@ -15,13 +33,27 @@ class Home extends Component {
       productList: [],
       lastestProject: null,
     };
+
+  }
+  componentWillMount() {
+    console.log(this.props, this.context);
+    this.props.router.setRouteLeaveHook(
+      this.props.route,
+      this.routeWillLeave
+    )
   }
 
+  routeWillLeave(nextLocation) {
+    console.log(nextLocation);
+    return `Leave for next Location ${nextLocation.pathname}`;
+  }
+  @didmount
   componentDidMount() {
-    console.log('home');
+    console.log(service.getProjects());
     this.setState({
       productList: service.getProjects()
     });
+    // this.time = 123;
   }
   componentWillUnmount() {
 
@@ -30,6 +62,7 @@ class Home extends Component {
   render() {
     return (
       <div className={'home '}>
+        <DatePicker />
         <h2 className='title'>前端开发工程师</h2>
         <div className='intro'>
           <p>郑锦鹏：23岁，两年工作经验，本科学历，吉林大学珠海学院；</p>
@@ -99,4 +132,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default withRouter(Home);

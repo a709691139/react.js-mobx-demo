@@ -24,7 +24,7 @@ const config = {
   // ----------------------------------
   // Server Configuration
   // ----------------------------------
-  server_host: 'localhost' || "192.168.191.1" ||  ip.address(), // use string 'localhost' to prevent exposure on local network
+  server_host: 'localhost' || "192.168.191.1" || ip.address(), // use string 'localhost' to prevent exposure on local network
   server_port: process.env.PORT || 3000,
 
   // ----------------------------------
@@ -32,7 +32,10 @@ const config = {
   // ----------------------------------
   compiler_babel: {
     cacheDirectory: true,
-    plugins: ['transform-runtime', 'babel-plugin-transform-decorators-legacy'],
+    plugins: ['transform-runtime', 'babel-plugin-transform-decorators-legacy', ["import", {
+      libraryName: "antd",
+      style: "css"
+    }]],
     presets: ['es2015', 'react', 'stage-0']
   },
   compiler_devtool: 'source-map',
@@ -49,7 +52,7 @@ const config = {
     'react',
     'react-router',
     'mobx-react',
-    'mobx',
+    'mobx'
   ],
 
   // ----------------------------------
@@ -115,7 +118,8 @@ function base() {
 config.utils_paths = {
   base: base,
   client: base.bind(null, config.dir_client),
-  dist: base.bind(null, config.dir_dist)
+  dist: base.bind(null, config.dir_dist),
+  service: base.bind(null, 'service'),
 }
 
 // ========================================================
